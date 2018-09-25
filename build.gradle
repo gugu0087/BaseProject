@@ -1,0 +1,69 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'  //添加这一行
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+
+    // Sdk and tools
+    minSdkVersion = 19
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    buildToolsVersion = '24.0.2'
+    versionCode = 1
+    versionName = 1
+
+    // App dependencies
+    supportLibraryVersion = '27.1.1'
+    constraintVersion = '1.1.3'
+    okgoVersion = '3.0.4'
+    gsonVersion = '2.8.0'
+    chuckVersion = '1.0.4'
+    okserverVersion = '2.0.5'
+    eventbusVersion = '3.0.0'
+    butterknifeVersion = '8.8.1'
+    SmartRefreshVersion = '1.1.0-alpha-14'
+    fragmentationVersion = '1.3.6'
+    pickerviewVersion = '1.0.1'
+
+    //test
+    junitVersion = '4.12'
+    runnerVersion = '1.0.2'
+    espressoVersion = '3.0.2'
+
+}
+
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support'
+                    && !details.requested.name.contains('multidex')) {
+                details.useVersion "$supportLibraryVersion"
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

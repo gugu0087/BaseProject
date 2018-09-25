@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    api "com.android.support.constraint:constraint-layout:$rootProject.constraintVersion"
+    api "org.greenrobot:eventbus:$rootProject.eventbusVersion"
+    api "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    api "com.jakewharton:butterknife-annotations:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+    api "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.SmartRefreshVersion"
+    api "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.SmartRefreshVersion"
+    api "me.yokeyword:fragmentation:$rootProject.fragmentationVersion"
+    implementation "org.jaaksi:pickerview:$rootProject.pickerviewVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+}
