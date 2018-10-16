@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ActivityUtils;
 import com.lzy.okgo.model.HttpParams;
 import com.xyc.httplibrary.listener.OnHttpRequestListener;
 import com.xyc.httplibrary.manager.HttpManager;
@@ -51,9 +52,13 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  initFragment();
+      //  initFragment()
+
     }
 
+    //  时间工具类（DateUtils)、弹窗工具类（DialogUtils)、文件操作工具类（FileUtils)、
+    // 网络状态工具类（NetworkUtils)、通知栏工具类（notificationUtils)、进度条工具类（ProgressUtils)
+    //  UI设置工具类（UIUtils)
    /* private void initFragment() {
         List<Long> datas = new ArrayList<>();
         for(int i=0;i<3;i++){

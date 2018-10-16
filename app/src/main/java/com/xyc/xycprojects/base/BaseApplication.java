@@ -1,8 +1,11 @@
 package com.xyc.xycprojects.base;
+import android.Manifest;
 import android.app.Application;
 import android.content.Context;
 
+import com.blankj.utilcode.util.PermissionUtils;
 import com.lzy.okgo.OkGo;
+import com.media.paylibrary.base.PaySDK;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
@@ -44,6 +47,10 @@ public class BaseApplication extends Application {
         super.onCreate();
         initOkGoOptions();
         initPickViewOptions();
+        String[] str = new String[2];
+        str[0] = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        str[1] = Manifest.permission.CAMERA;
+        PermissionUtils.permission(str).request();
     }
 
     private void initPickViewOptions(){

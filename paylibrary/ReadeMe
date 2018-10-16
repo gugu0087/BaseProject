@@ -1,0 +1,9 @@
+
+1. 支付组件分为微信支付和支付宝支付
+
+2. 调用之前请先在项目app 的application 中初始化
+ PaySDK.getInstance().initPayParams(this,"your appId");
+
+3.支付宝支付的结果回调是在子线程中的，不能直接在回调结果的方法内处理Ui,回调事件在调用页面处理就好。
+
+4.微信支付的结果回调只能在 WXPayEntryActivity 类里面处理。WXPayEntryActivity类的布局页面可以通过getContentView（）方法传进去。

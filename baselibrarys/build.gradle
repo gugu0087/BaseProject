@@ -36,6 +36,7 @@ dependencies {
     api "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.SmartRefreshVersion"
     api "me.yokeyword:fragmentation:$rootProject.fragmentationVersion"
     implementation "org.jaaksi:pickerview:$rootProject.pickerviewVersion"
+    api "com.blankj:utilcode:$rootProject.utilcodeVersion"
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
