@@ -25,6 +25,9 @@ dependencies {
     testImplementation "junit:junit:$rootProject.junitVersion"
     testImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
     testImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+    api "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    api "com.jakewharton:butterknife-annotations:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
     implementation project(':httplibrary')
     implementation project(':baselibrarys')
     implementation project(':paylibrary')

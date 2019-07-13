@@ -29,9 +29,7 @@ dependencies {
     api "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     api "com.android.support.constraint:constraint-layout:$rootProject.constraintVersion"
     api "org.greenrobot:eventbus:$rootProject.eventbusVersion"
-    api "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
-    api "com.jakewharton:butterknife-annotations:$rootProject.butterknifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+
     api "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.SmartRefreshVersion"
     api "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.SmartRefreshVersion"
     api "me.yokeyword:fragmentation:$rootProject.fragmentationVersion"

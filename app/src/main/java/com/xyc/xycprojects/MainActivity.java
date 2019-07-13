@@ -3,6 +3,7 @@ package com.xyc.xycprojects;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ActivityUtils;
@@ -35,7 +36,7 @@ public class MainActivity extends BaseActivity {
     TextView tvTab3;
 
     @BindView(R.id.llFragment)
-    TextView llFragment;
+    LinearLayout llFragment;
 
     private List<BaseFragment>  fragments = new ArrayList<>();
 
@@ -52,22 +53,21 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  initFragment()
+       initFragment();
 
     }
 
     //  时间工具类（DateUtils)、弹窗工具类（DialogUtils)、文件操作工具类（FileUtils)、
     // 网络状态工具类（NetworkUtils)、通知栏工具类（notificationUtils)、进度条工具类（ProgressUtils)
     //  UI设置工具类（UIUtils)
-   /* private void initFragment() {
+    private void initFragment() {
         List<Long> datas = new ArrayList<>();
         for(int i=0;i<3;i++){
             datas.add((long)(i+1));
         }
         EventBus.getDefault().post(new FragmentEvent(datas));
     }
-*/
-    /*@Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onGetFrgmentCountEvent(FragmentEvent event) {
         List<Long> usersList = event.getUsersList();
         if (usersList == null) {
@@ -83,9 +83,9 @@ public class MainActivity extends BaseActivity {
                 loadRootFragment(R.id.llFragment,mainFragment);
             }
         }
-    }*/
+    }
 
-/*    @OnClick({R.id.tvTab1, R.id.tvTab2, R.id.tvTab3})
+    @OnClick({R.id.tvTab1, R.id.tvTab2, R.id.tvTab3})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvTab1:
@@ -100,5 +100,5 @@ public class MainActivity extends BaseActivity {
 
                 break;
         }
-    }*/
+    }
 }
